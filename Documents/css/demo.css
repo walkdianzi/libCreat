@@ -1,0 +1,161 @@
+*{
+    margin:0;
+    padding:0;
+}html{
+    height:100%;
+    font-size:62.5%;
+ }
+body{
+    height:100%;
+    font-size:1.4rem;
+}
+.container1{
+    height:100%;
+    width:768px;
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+    margin:auto;
+}
+
+button{
+    font-size:12px;
+    line-height:15px;
+}
+
+.onwindowtop{
+    width: 100%; height: 30px; position: fixed; top: 0;opacity:1;
+}
+
+.configitem{
+    height:50px;
+    line-height:30px;
+    padding-top:20px;
+}
+.application>button{
+    padding:4px 5px;
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:3px;
+    color:#88cfd9;
+    font-weight: bold;
+    cursor:pointer;
+}
+.configname button{
+    padding:4px 5px;
+    color:#88cfd9;
+    background:white;
+    font-weight:bold;
+    border:1px solid #ddd
+}
+.newfolder,.copyconfig,.refresh{
+    padding:4px 5px;
+    margin-top:5px;
+    margin-left:5px;
+    cursor: pointer;
+}
+.newfolder{
+    margin-right:15px;
+}
+.configname>li{
+    float:left;
+}
+.configname>li>button{
+    cursor: pointer;
+    outline:none;
+}
+.table1{
+    padding-top:90px;
+    margin-top:-80px;
+    box-sizing: border-box;
+    height:100%;
+}
+.tableheader>ul{
+    height:30px;
+    line-height:30px;
+    background:#f6f4f7;
+    padding:0 10px;
+}
+.tableheader>ul>li{
+    float:left;
+}
+.tableheader>ul>li:nth-child(1),.pid{
+    width:15%;
+}
+.tableheader>ul>li:nth-child(2),.podName{
+    width:40%
+}
+.tableheader>ul>li:nth-child(3),.repoName{
+    width:25%;
+}
+.tableheader>ul>li:nth-child(4),.operation{
+    width:20%
+}
+
+.tagtableheader>ul{
+    height:30px;
+    line-height:30px;
+    background:#f6f4f7;
+    padding:0 10px;
+}
+.tagtableheader>ul>li{
+    float:left;
+}
+.tagtableheader>ul>li:nth-child(1),.tag{
+    width:40%
+}
+.tagtableheader>ul>li:nth-child(2),.tagBranch{
+    width:40%
+}
+
+.tagtableheader>ul>li:nth-child(3),.operation{
+    width:20%
+}
+
+.pid,.podName,.repoName,.operation,.tag,.tagBranch{
+    height:30px;
+    line-height:30px;
+    float:left;
+    border:none;
+}
+.tablelist{
+    height:100%;
+}
+.tablelist>li{
+    height:30px;
+    line-height:30px;
+    border-bottom:1px solid #f0f0f0;
+    padding:0 10px;
+}
+.tablelist>li:hover{
+    background:#ecf9ff
+}
+.tablelist>li>div{
+    height:30px;
+    line-height:30px;
+    font-size:13px;
+}
+.operation a{
+    text-decoration: none;
+    color:#88cfd9;
+    font-weight:bold;
+    cursor: pointer;
+}
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+.m-r{
+   margin-right:1.5rem;
+}
+.m-r-small{
+    margin-right:0.5rem;
+}
+button.active{
+    background:#29b9fa;
+    color:white;
+}
+ul{
+    list-style-type:none;
+}

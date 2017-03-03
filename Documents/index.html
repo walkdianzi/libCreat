@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap-3.3.7.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/demo.css">
+    <script type="text/javascript" src="./js/spin.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-3.3.7.min.js"></script>
+    <script type="text/javascript" src="./js/handlebars-v3.0.0.js"></script>
+    <script type="text/javascript" src="./js/default.js"></script>
+</head>
+<body>
+    <div id = "alert_placeholder" class="onwindowtop"></div>
+    <div class="container1" id="container1">
+        <div class="configitem" >
+            <button type="button" class="refresh pull-right">更新无二进制的spec</button>
+            <button type="button" class="newfolder pull-right">+&nbsp;新增</button>
+        </div>
+        <div class="table1">
+            <div class="tableheader">
+                <ul>
+                    <li>Pid</li>
+                    <li>podName</li>
+                    <li>repoName</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+            <ul class="tablelist">
+
+            </ul>
+        </div>
+    </div>
+
+    <script id="templi" type="text/x-handlebars-template">
+        {{#each data}}
+        <li class="datali">
+            <input type="text" value="{{pid}}" class="pid" readonly="true" />
+            <input type="text" value="{{podName}}" class="podName" readonly="true" />
+            <input type="text" value="{{repoName}}" class="repoName" readonly="true" />
+            <div class="operation">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" class="editli" data-index={{@index}}>编辑</a>
+                        <a href="javascript:void(0)" class="removeli" data-index={{@index}}>删除</a>
+                        <a href="javascript:void(0)" class="tagli" data-index={{@index}}>标签</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">添加新Pod</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="pod-name" class="control-label" id="pod-name-label">podName:</label>
+                            <input type="text" class="form-control pod-name" id="pod-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="repo-name" class="control-label" id="repo-name-label">repoName:</label>
+                            <input type="text" class="form-control repo-name" id="repo-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="podspec-name" class="control-label" id="podspec-name-label">podspecName:</label>
+                            <input type="text" class="form-control podspec-name" id="podspec-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="sourceSSHUrl" class="control-label" id="sourceSSHUrl-label">sourceSSHUrl:</label>
+                            <input type="text" class="form-control sourceSSHUrl" id="sourceSSHUrl">
+                        </div>
+                        <div class="form-group">
+                            <label for="sourceHttpUrl" class="control-label" id="sourceHttpUrl-label">sourceHttpUrl:</label>
+                            <input type="text" class="form-control sourceHttpUrl" id="sourceHttpUrl">
+                        </div>
+                        <div class="form-group">
+                            <label for="libSSHUrl" class="control-label" id="libSSHUrl-label">libSSHUrl:</label>
+                            <input type="text" class="form-control libSSHUrl" id="libSSHUrl">
+                        </div>
+                        <div class="form-group">
+                            <label for="libHttpUrl" class="control-label" id="libHttpUrl-label">libHttpUrl:</label>
+                            <input type="text" class="form-control libHttpUrl" id="libHttpUrl">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="creatconfri btn btn-primary" id="confir" value=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 是否删除-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">删除</h4>
+                </div>
+                <div class="modal-body">
+                    删除后不可恢复,是否确认删除?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="deleteconfir btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

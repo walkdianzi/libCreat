@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap-3.3.7.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/demo.css">
+    <script type="text/javascript" src="./js/spin.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap-3.3.7.min.js"></script>
+    <script type="text/javascript" src="./js/handlebars-v3.0.0.js"></script>
+    <script type="text/javascript" src="./js/taginfo.js"></script>
+</head>
+<body>
+    <div id = "alert_placeholder" class="onwindowtop"></div>
+    <div class="container1" id="container1">
+        <div class="configitem">
+            <div class="application pull-left m-r">
+                <span id="podname">应用:&nbsp;&nbsp;</span>
+            </div>
+            <button type="button" class="newfolder pull-right">+&nbsp;新增</button>
+        </div>
+        <div class="table1">
+            <div class="tagtableheader">
+                <ul>
+                    <li>tag</li>
+                    <li>tagBranch</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+            <ul class="tablelist">
+
+            </ul>
+        </div>
+    </div>
+
+
+    <script id="templi" type="text/x-handlebars-template">
+        {{#each data}}
+        <li class="datali">
+            <input type="text" value="{{tag}}" class="tag" readonly="true" />
+            <input type="text" value="{{tagBranch}}" class="tagBranch" readonly="true" />
+            <div class="operation">
+                <ul>
+                    <li>
+                        <a href="javascript:void(0)" class="editli" data-index={{@index}}>编辑</a>
+                        <a href="javascript:void(0)" class="removeli" data-index={{@index}}>删除</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {{/each}}
+    </script>
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">添加新tag</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="tag-name" class="control-label" id="tag-name-label">tag:</label>
+                            <input type="text" class="form-control" id="tag-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="tagBranch-name" class="control-label" id="tagBranch-name-label">tagBranch:</label>
+                            <input type="text" class="form-control" id="tagBranch-name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="creatconfri btn btn-primary">创建</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框（Modal） 是否删除-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">删除</h4>
+                </div>
+                <div class="modal-body">
+                    删除后不可恢复,是否确认删除?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">返回</button>
+                    <button type="button" class="deleteconfir btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

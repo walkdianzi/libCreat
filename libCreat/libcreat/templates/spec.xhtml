@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="${tg.url('/css/spec.css')}" />
+</head>
+<body>
+    <div class="container">
+        <div class="configitem">
+            <div class="application pull-left m-r">
+                <span>应用:&nbsp;&nbsp;</span>
+                <button type="button">大风车-客户端(dafengche)</button>
+            </div>
+            <div class="environment pull-left">
+                <span class="pull-left">环境:&nbsp;&nbsp;</span>
+                <ul class="configname pull-left">
+                    <li>
+                        <button type="button" class="active">开发A</button>
+                    </li>
+                    <li>
+                        <button type="button">开发A</button>
+                    </li>
+                    <li>
+                        <button type="button">开发A</button>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="refresh pull-right">刷新</button>
+            <button type="button" class="copyconfig pull-right">复制配置</button>
+            <button type="button" class="newfolder pull-right">+&nbsp;新增</button>
+        </div>
+        <div class="table">
+            <div class="tableheader">
+                <ul>
+                    <li>Key</li>
+                    <li>value</li>
+                    <li>说明</li>
+                    <li>操作</li>
+                </ul>
+            </div>
+            <ul class="tablelist">
+
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript" src="${tg.url('/javascript/jquery-1.10.2.min.js')}"></script>
+<script type="text/javascript" src="${tg.url('/javascript/handlebars-v3.0.0.js')}"></script>
+<script type="text/javascript" src="${tg.url('/javascript/default.js')}"></script>
+<script id="templi" type="text/x-handlebars-template">
+    {{#each data}}
+    <li class="datali">
+        <input type="text" value="{{key}}" class="key" readonly="true" />
+        <input type="text" value="{{value}}" class="value" readonly="true" />
+        <input type="text" value="{{type}}" class="type" readonly="true" />
+        <div class="operation">
+            <ul>
+                <li>
+                    <a href="javascript:void(0)" class="editli">编辑</a>
+                    <a href="javascript:void(0)" class="removeli">删除</a>
+                    <a href="javascript:void(0)">历史</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    {{/each}}
+</script>
+</body>
+</html>
